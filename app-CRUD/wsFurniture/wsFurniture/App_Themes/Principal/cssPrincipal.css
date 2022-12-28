@@ -1,0 +1,32 @@
+﻿body {
+}
+
+.titulo {
+    font-family: Arial;
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+}
+
+.pie {
+    font-family: Arial;
+    font-size: medium;
+    font-weight: normal;
+    color: black;
+}
+
+.pieNegrita {
+    font-family: Arial;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
+
+.pieImg {
+    width: 20px;
+    height: 20px;
+}
+
+.color1 {
+    color: 110, 44, 0;
+}

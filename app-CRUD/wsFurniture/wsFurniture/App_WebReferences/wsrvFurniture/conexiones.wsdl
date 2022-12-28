@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="qryAcceso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="qryAccesoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="qryAccesoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inventario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="precio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inventario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="precio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="delProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pasword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pais" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="colonia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exterior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="interior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pasword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="materno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pais" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="colonia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="exterior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="interior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="delUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vw_usuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vw_usuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vw_usuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="qryListaRol">
+        <s:complexType />
+      </s:element>
+      <s:element name="qryListaRolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="qryListaRolResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vw_Producto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vw_ProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vw_ProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="qryUsuarioABC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="qryUsuarioABCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="qryUsuarioABCResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="qryProductoABC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clave" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="qryProductoABCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="qryProductoABCResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="qryAccesoSoapIn">
+    <wsdl:part name="parameters" element="tns:qryAcceso" />
+  </wsdl:message>
+  <wsdl:message name="qryAccesoSoapOut">
+    <wsdl:part name="parameters" element="tns:qryAccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="insProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:insProducto" />
+  </wsdl:message>
+  <wsdl:message name="insProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:insProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="updProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:updProducto" />
+  </wsdl:message>
+  <wsdl:message name="updProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:updProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="delProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:delProducto" />
+  </wsdl:message>
+  <wsdl:message name="delProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:delProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="insUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:insUsuario" />
+  </wsdl:message>
+  <wsdl:message name="insUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:insUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="updUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:updUsuario" />
+  </wsdl:message>
+  <wsdl:message name="updUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:updUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="delUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:delUsuario" />
+  </wsdl:message>
+  <wsdl:message name="delUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:delUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="vw_usuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:vw_usuario" />
+  </wsdl:message>
+  <wsdl:message name="vw_usuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:vw_usuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="qryListaRolSoapIn">
+    <wsdl:part name="parameters" element="tns:qryListaRol" />
+  </wsdl:message>
+  <wsdl:message name="qryListaRolSoapOut">
+    <wsdl:part name="parameters" element="tns:qryListaRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="vw_ProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:vw_Producto" />
+  </wsdl:message>
+  <wsdl:message name="vw_ProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:vw_ProductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="qryUsuarioABCSoapIn">
+    <wsdl:part name="parameters" element="tns:qryUsuarioABC" />
+  </wsdl:message>
+  <wsdl:message name="qryUsuarioABCSoapOut">
+    <wsdl:part name="parameters" element="tns:qryUsuarioABCResponse" />
+  </wsdl:message>
+  <wsdl:message name="qryProductoABCSoapIn">
+    <wsdl:part name="parameters" element="tns:qryProductoABC" />
+  </wsdl:message>
+  <wsdl:message name="qryProductoABCSoapOut">
+    <wsdl:part name="parameters" element="tns:qryProductoABCResponse" />
+  </wsdl:message>
+  <wsdl:portType name="conexionesSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="qryAcceso">
+      <wsdl:input message="tns:qryAccesoSoapIn" />
+      <wsdl:output message="tns:qryAccesoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insProducto">
+      <wsdl:input message="tns:insProductoSoapIn" />
+      <wsdl:output message="tns:insProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updProducto">
+      <wsdl:input message="tns:updProductoSoapIn" />
+      <wsdl:output message="tns:updProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delProducto">
+      <wsdl:input message="tns:delProductoSoapIn" />
+      <wsdl:output message="tns:delProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insUsuario">
+      <wsdl:input message="tns:insUsuarioSoapIn" />
+      <wsdl:output message="tns:insUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updUsuario">
+      <wsdl:input message="tns:updUsuarioSoapIn" />
+      <wsdl:output message="tns:updUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delUsuario">
+      <wsdl:input message="tns:delUsuarioSoapIn" />
+      <wsdl:output message="tns:delUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vw_usuario">
+      <wsdl:input message="tns:vw_usuarioSoapIn" />
+      <wsdl:output message="tns:vw_usuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="qryListaRol">
+      <wsdl:input message="tns:qryListaRolSoapIn" />
+      <wsdl:output message="tns:qryListaRolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vw_Producto">
+      <wsdl:input message="tns:vw_ProductoSoapIn" />
+      <wsdl:output message="tns:vw_ProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="qryUsuarioABC">
+      <wsdl:input message="tns:qryUsuarioABCSoapIn" />
+      <wsdl:output message="tns:qryUsuarioABCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="qryProductoABC">
+      <wsdl:input message="tns:qryProductoABCSoapIn" />
+      <wsdl:output message="tns:qryProductoABCSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="conexionesSoap" type="tns:conexionesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="qryAcceso">
+      <soap:operation soapAction="http://tempuri.org/qryAcceso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insProducto">
+      <soap:operation soapAction="http://tempuri.org/insProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updProducto">
+      <soap:operation soapAction="http://tempuri.org/updProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delProducto">
+      <soap:operation soapAction="http://tempuri.org/delProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insUsuario">
+      <soap:operation soapAction="http://tempuri.org/insUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updUsuario">
+      <soap:operation soapAction="http://tempuri.org/updUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delUsuario">
+      <soap:operation soapAction="http://tempuri.org/delUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_usuario">
+      <soap:operation soapAction="http://tempuri.org/vw_usuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="qryListaRol">
+      <soap:operation soapAction="http://tempuri.org/qryListaRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_Producto">
+      <soap:operation soapAction="http://tempuri.org/vw_Producto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="qryUsuarioABC">
+      <soap:operation soapAction="http://tempuri.org/qryUsuarioABC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="qryProductoABC">
+      <soap:operation soapAction="http://tempuri.org/qryProductoABC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="conexionesSoap12" type="tns:conexionesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="qryAcceso">
+      <soap12:operation soapAction="http://tempuri.org/qryAcceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insProducto">
+      <soap12:operation soapAction="http://tempuri.org/insProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updProducto">
+      <soap12:operation soapAction="http://tempuri.org/updProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delProducto">
+      <soap12:operation soapAction="http://tempuri.org/delProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insUsuario">
+      <soap12:operation soapAction="http://tempuri.org/insUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updUsuario">
+      <soap12:operation soapAction="http://tempuri.org/updUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delUsuario">
+      <soap12:operation soapAction="http://tempuri.org/delUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_usuario">
+      <soap12:operation soapAction="http://tempuri.org/vw_usuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="qryListaRol">
+      <soap12:operation soapAction="http://tempuri.org/qryListaRol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vw_Producto">
+      <soap12:operation soapAction="http://tempuri.org/vw_Producto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="qryUsuarioABC">
+      <soap12:operation soapAction="http://tempuri.org/qryUsuarioABC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="qryProductoABC">
+      <soap12:operation soapAction="http://tempuri.org/qryProductoABC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="conexiones">
+    <wsdl:port name="conexionesSoap" binding="tns:conexionesSoap">
+      <soap:address location="http://localhost:52086/conexiones.asmx" />
+    </wsdl:port>
+    <wsdl:port name="conexionesSoap12" binding="tns:conexionesSoap12">
+      <soap12:address location="http://localhost:52086/conexiones.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

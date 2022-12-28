@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mpPrincipal.master.cs" Inherits="mpPrincipal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style2 {
+            height: 28px;
+        }
+        </style>
+
+
+    <link href="App_Themes/Principal/cssPrincipal.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+
+
+
+
+
+
+
+
+          <table width="100%" border="0">
+            <tr>
+                <td colspan="2" bgcolor="brown">
+
+                    <table width="100%" border="0">
+                     <tr>
+                         <td width="20%" align="left">
+                             &nbsp;</td>
+                         <td width="60%" align="middle">
+                             <asp:Label ID="Label1" runat="server" Text="Muebles Kicson " CssClass="titulo" ForeColor="#FFFFCC"></asp:Label>
+                             <br />
+                             <asp:Image ID="Image5" runat="server" ImageUrl="~/imagenes/logo.png" Width="70px" Height="70px" />
+                         </td>
+                         <td width="20%" align="right">
+                             &nbsp;</td>
+                     </tr>
+                    </table>
+
+                </td>
+            </tr>            
+            <tr>
+                
+
+                <!-- Aqui va td -->
+
+
+
+
+            </tr>            
+            <tr>
+                
+
+
+                <!-- Aqui va el otro td -->
+
+
+
+                <td width="80%">
+
+
+
+
+
+
+
+
+
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+
+
+
+                <br />
+              <br />
+              <br />
+
+
+
+
+    
+
+        </asp:ContentPlaceHolder>
+
+
+                </td>
+            </tr>      
+              
+                  <br />
+              <br />
+              <br />
+              
+            <tr>
+               
+                <td colspan="2" align="middle" bgcolor="brown" class="auto-style2">
+                             
+                
+                    <asp:Label ID="Label4" runat="server" Font-Bold="False" Font-Names="Arial" Font-Size="Small" Text="Derechos Reservados del Autor. 2022" CssClass="pie"></asp:Label>
+                         &nbsp;
+                             <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="Small" Text="Aviso de Privacidad" CssClass="pieNegrita"></asp:Label>
+                         &nbsp;
+                    
+                </td>
+            </tr>            
+
+        </table>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    </form>
+</body>
+</html>
